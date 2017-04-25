@@ -1,0 +1,62 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+</style>
+<h2 class="page-heading">Get started</h2>
+<div id="mainContainer" class="page-content col-sm-12">
+  <div class="steps-container col-xs-12">
+    <div class="steps-line-container">
+      <div id="line1" class="steps-line"></div>
+      <div id="line2" class="steps-line"></div>
+    </div>
+    <div class="steps-main">
+      <div class="number-container col-xs-4">
+        <div class="step-container">
+          <div id="step1" class="step active">
+            <div>1</div>
+          </div>
+        </div>
+      </div>
+      <div class="number-container col-xs-4">
+        <div class="step-container align-center">
+          <div id="step2" class="step">
+            <div>2</div>
+          </div>
+        </div>
+      </div>
+      <div class="number-container col-xs-4">
+        <div class="step-container align-right">
+          <div id="step3" class="step">
+            <div>3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-container col-xs-12">
+    <div class="form-title-container">
+      <h2 class="step-header-title">Enter Subnet Mask</h2>
+    </div>
+    <form id="subNetForm">
+        <input type="text" id="subNetMask" class="form-control" placeholder="Subnet Mask">
+        <button type="submit" id="step1ProceedBtn" class="btn btn-green">Proceed</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block custom_js %}
+  <script src="{% static 'dashboard/js/chart/Chart.js' %}"></script>
+  <script src="{% static 'dashboard/js/chart/Chart.bundle.js' %}"></script>
+  <script src="{% static 'dashboard/js/chart/utils.js' %}"></script>
+  <script src="{% static 'dashboard/js/chart/chart-main.js' %}"></script>
+{% endblock %}
+    <!-- <button type="button" class="btn btn-green" onclick="goto_step(2)">Stap 2</button>
+    <button type="button" class="btn btn-green" onclick="goto_step(3)">Stap 3</button> -->
